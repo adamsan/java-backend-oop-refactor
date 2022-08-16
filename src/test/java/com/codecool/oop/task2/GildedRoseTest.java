@@ -8,7 +8,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTest() {
-        Item item = new Item("foo", 5, 10);
+        Item item = Item.create("foo", 5, 10);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(4, item.sellIn);
@@ -17,7 +17,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTest2() {
-        Item item = new Item("foo", 0, 10);
+        Item item = Item.create("foo", 0, 10);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(-1, item.sellIn);
@@ -26,7 +26,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestAgedBrie() {
-        Item item = new Item("Aged Brie", 5, 10);
+        Item item = Item.create("Aged Brie", 5, 10);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(4, item.sellIn);
@@ -35,7 +35,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestAgedBrie2() {
-        Item item = new Item("Aged Brie", 0, 10);
+        Item item = Item.create("Aged Brie", 0, 10);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(-1, item.sellIn);
@@ -44,7 +44,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestAgedBrie3() {
-        Item item = new Item("Aged Brie", -1, 50);
+        Item item = Item.create("Aged Brie", -1, 50);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(-2, item.sellIn);
@@ -54,7 +54,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestBackStage() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10);
+        Item item = Item.create("Backstage passes to a TAFKAL80ETC concert", 5, 10);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(4, item.sellIn);
@@ -63,7 +63,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestBackStage2() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10);
+        Item item = Item.create("Backstage passes to a TAFKAL80ETC concert", 0, 10);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(-1, item.sellIn);
@@ -72,7 +72,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestBackStage3() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 4,49);
+        Item item = Item.create("Backstage passes to a TAFKAL80ETC concert", 4,49);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(3, item.sellIn);
@@ -81,7 +81,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestBackStage4() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 14,49);
+        Item item = Item.create("Backstage passes to a TAFKAL80ETC concert", 14,49);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(13, item.sellIn);
@@ -90,7 +90,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestBackStage5() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 14,52);
+        Item item = Item.create("Backstage passes to a TAFKAL80ETC concert", 14,52);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(13, item.sellIn);
@@ -99,7 +99,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestFoo() {
-        Item item = new Item("foo", -1,-2);
+        Item item = Item.create("foo", -1,-2);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(-2, item.sellIn);
@@ -108,7 +108,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestSulfuras() {
-        Item item = new Item("Sulfuras, Hand of Ragnaros", 5, 10);
+        Item item = Item.create("Sulfuras, Hand of Ragnaros", 5, 10);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(5, item.sellIn);
@@ -117,7 +117,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestSulfuras2() {
-        Item item = new Item("Sulfuras, Hand of Ragnaros", 5, 0);
+        Item item = Item.create("Sulfuras, Hand of Ragnaros", 5, 0);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(5, item.sellIn);
@@ -126,7 +126,7 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestSulfuras3() {
-        Item item = new Item("Sulfuras, Hand of Ragnaros", -1, 5);
+        Item item = Item.create("Sulfuras, Hand of Ragnaros", -1, 5);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(-1, item.sellIn);
