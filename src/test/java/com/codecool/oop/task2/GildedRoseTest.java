@@ -90,20 +90,20 @@ class GildedRoseTest {
 
     @Test
     void updateQualityTestBackStage5() {
-        Item item = Item.create("Backstage passes to a TAFKAL80ETC concert", 14,52);
+        Item item = Item.create("Backstage passes to a TAFKAL80ETC concert", 14,50);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(13, item.sellIn);
-        assertEquals(52, item.quality);
+        assertEquals(50, item.quality);
     }
 
     @Test
     void updateQualityTestFoo() {
-        Item item = Item.create("foo", -1,-2);
+        Item item = Item.create("foo", -1,0);
         var g = new GildedRose(new Item[]{item});
         g.updateQuality();
         assertEquals(-2, item.sellIn);
-        assertEquals(-2, item.quality);
+        assertEquals(0, item.quality);
     }
 
     @Test

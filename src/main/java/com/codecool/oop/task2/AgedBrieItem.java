@@ -7,14 +7,9 @@ public class AgedBrieItem extends Item {
 
     @Override
     void updateQuality() {
-        if (quality < 50) {
-            quality = quality + 1;
-        }
-        sellIn = sellIn - 1;
-        if (sellIn < 0) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
-        }
+        int increaseQuality = sellIn <= 0 ? 2 : 1;
+        int maxQuality = 50;
+        quality = Math.min(maxQuality, quality + increaseQuality);
+        sellIn--;
     }
 }

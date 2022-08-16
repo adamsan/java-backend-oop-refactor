@@ -32,14 +32,9 @@ public class Item {
     }
 
     void updateQuality() {
-        if (quality > 0) {
-            quality = quality - 1;
-        }
-        sellIn = sellIn - 1;
-        if (sellIn < 0) {
-            if (quality > 0) {
-                quality = quality - 1;
-            }
-        }
+        sellIn--;
+        int decreaseByDay = sellIn < 0 ? 2 : 1;
+        int minimumQuality = 0;
+        quality = Math.max(quality - decreaseByDay, minimumQuality);
     }
 }
