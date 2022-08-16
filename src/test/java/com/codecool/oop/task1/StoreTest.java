@@ -3,7 +3,6 @@ package com.codecool.oop.task1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.codecool.oop.task1.CustomerType.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StoreTest {
@@ -16,11 +15,11 @@ class StoreTest {
 
     @BeforeEach
     void setup() {
-        newCustomer = new Customer(1, "Abel", 10, NEW);
-        discountCustomer = new Customer(2, "John", 10, DISCOUNT);
-        loyalCustomer = new Customer(3, "Baron", 10, LOYAL);
-        premiumCustomer = new Customer(4, "Lord", 10, PREMIUM);
-        premiumSpenderCustomer = new Customer(4, "Lord", 200, PREMIUM);
+        newCustomer = new NewCustomer(1, "Abel", 10.);
+        discountCustomer = new DiscountCustomer(2, "John", 10.);
+        loyalCustomer = new LoyalCustomer(3, "Baron", 10.);
+        premiumCustomer = new PremiumCustomer(4, "Lord", 10.);
+        premiumSpenderCustomer = new PremiumCustomer(4, "Lord", 200.);
     }
 
     @Test

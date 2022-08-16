@@ -9,9 +9,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @ToString
-public class Customer {
+public abstract class Customer {
     private int id;
     private String name;
     private double moneySpentInLastMonth;
-    private CustomerType type;
+
+    abstract double calculateFee();
 }
